@@ -1,4 +1,4 @@
-package api.simple.quotes.application;
+package api.simplequotes.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
