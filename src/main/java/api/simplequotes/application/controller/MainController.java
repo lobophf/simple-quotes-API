@@ -68,6 +68,11 @@ public class MainController {
     return ResponseEntity.status(HttpStatus.OK).body(quotationService.getAll());
   }
 
+  @GetMapping("random")
+  public @ResponseBody ResponseEntity<Object> randomQuote() {
+    return ResponseEntity.status(HttpStatus.OK).body(quotationService.getRandomQuotation());
+  }
+
   @GetMapping("/{id}")
   public @ResponseBody ResponseEntity<Object> getSomeQuote(@PathVariable(value = "id") int id) {
     if (!quotationService.existsQuotationById(id)) {

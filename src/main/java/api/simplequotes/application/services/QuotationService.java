@@ -1,6 +1,7 @@
 package api.simplequotes.application.services;
 
 import java.util.Optional;
+import java.util.Random;
 
 import javax.transaction.Transactional;
 
@@ -51,6 +52,12 @@ public class QuotationService {
 
   public boolean existsQuotationByContent(String content) {
     return quotationRepository.existsByQuotationContent(content);
+  }
+
+  public Object getRandomQuotation() {
+    Random rn = new Random();
+    int randomNumber =  rn.nextInt((int)quotationRepository.count()) + 1;
+    return quotationRepository.findById(randomNumber);
   }
 
 }
