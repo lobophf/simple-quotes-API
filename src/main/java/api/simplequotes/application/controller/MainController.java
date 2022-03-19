@@ -42,7 +42,7 @@ public class MainController {
   }
 
   @PutMapping("/{id}")
-  public @ResponseBody ResponseEntity<Object> replace(@RequestBody Dto dto, @PathVariable(value = "id") int id) {
+  public @ResponseBody ResponseEntity<Object> replace(@RequestBody Dto dto, @PathVariable(value = "id") long id) {
 
     Quotation quotation = new Quotation();
 
@@ -54,7 +54,7 @@ public class MainController {
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<String> remove(@PathVariable(value = "id") int id) {
+  public ResponseEntity<String> remove(@PathVariable(value = "id") long id) {
     if (!quotationService.existsQuotationById(id)) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Quotation not found.");
     }
@@ -74,7 +74,7 @@ public class MainController {
   }
 
   @GetMapping("/{id}")
-  public @ResponseBody ResponseEntity<Object> getSomeQuote(@PathVariable(value = "id") int id) {
+  public @ResponseBody ResponseEntity<Object> getSomeQuote(@PathVariable(value = "id") long id) {
     if (!quotationService.existsQuotationById(id)) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Quotation not found.");
     }

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Quotation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false, length = 4)
     private Integer year;
@@ -26,11 +26,11 @@ public class Quotation {
     @Column(nullable = true, columnDefinition = "text")
     private String urlImgAssociatedWhithIt;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

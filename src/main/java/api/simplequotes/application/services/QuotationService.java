@@ -1,7 +1,6 @@
 package api.simplequotes.application.services;
 
 import java.util.Optional;
-import java.util.Random;
 
 import javax.transaction.Transactional;
 
@@ -27,11 +26,11 @@ public class QuotationService {
   }
 
   @Transactional
-  public void deleteQuotation(int id) {
+  public void deleteQuotation(long id) {
     quotationRepository.deleteById(id);
   }
 
-  public Optional<Quotation> update(Quotation quotation, int id) {
+  public Optional<Quotation> update(Quotation quotation, long id) {
     return quotationRepository.findById(id)
         .map(newQuotation -> {
           quotation.setAuthor(quotation.getAuthor());
@@ -42,11 +41,11 @@ public class QuotationService {
         });
   }
 
-  public Object getQuotation(int id) {
+  public Object getQuotation(long id) {
     return quotationRepository.findById(id);
   }
 
-  public boolean existsQuotationById(int id) {
+  public boolean existsQuotationById(long id) {
     return quotationRepository.existsById(id);
   }
 
@@ -55,8 +54,9 @@ public class QuotationService {
   }
 
   public Object getRandomQuotation() {
-    Random rn = new Random();
-    int randomNumber =  rn.nextInt((int)quotationRepository.count()) + 1;
+    long min = 1L;
+    long max = quotationRepository.count() + 1L;
+    long randomNumber = min + (long) (Math.random() * (max - min));
     return quotationRepository.findById(randomNumber);
   }
 
