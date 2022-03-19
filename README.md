@@ -1,6 +1,6 @@
 This simple API give to you a way to fetch quotations into JSON format.
 
-To set up and run the server, you need to create a Postgres database and add a file `/src/main/resources/application.properties` which the following content. Don't forget to replace fields like database name, username, and password.
+To set up and run the server, you need to create a MySQL database and add a file `/src/main/resources/application.properties` which the following content. Don't forget to replace fields like database name, username, and password.
 
 ```
 spring.jpa.hibernate.ddl-auto=update
