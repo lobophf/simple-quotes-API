@@ -25,9 +25,9 @@ You might want to access the endpoints using the following cURL commands.
 
 GET
 ```sh
-http://localhost:8080/api/v1/application
-http://localhost:8080/api/v1/application/{id}
-http://localhost:8080/api/v1/application/random
+http://localhost:8080/api/v1/simplequotations
+http://localhost:8080/api/v1/simplequotations/{id}
+http://localhost:8080/api/v1/simplequotations/random
 ```
 
 POST
@@ -39,7 +39,7 @@ curl -X POST -H "Content-Type: application/json" \
 		"quotationContent": "Life is too long to know C++ well.",
 		"urlImgAssociatedWithIt": ""
 	    }' \
-	    http://localhost:8080/api/v1/application
+	    http://localhost:8080/api/v1/simplequotations
 ```
 
 PUT
@@ -51,10 +51,10 @@ curl -X PUT -H "Content-Type: application/json" \
 		"quotationContent": "Redundant comments are just places to collect lies and misinformation.",
 		"urlImgAssociatedWithIt": ""
 	}' \
-	http://localhost:8080/api/v1/application/1
+	http://localhost:8080/api/v1/simplequotations/1
 ```
 
 DELETE
 ```sh
-curl -X DELETE http://localhost:8080/api/v1/application/1
+curl -X DELETE http://localhost:8080/api/v1/simplequotations/1
 ```

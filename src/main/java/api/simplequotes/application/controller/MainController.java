@@ -20,7 +20,7 @@ import api.simplequotes.application.models.Quotation;
 import api.simplequotes.application.services.QuotationService;
 
 @RestController
-@RequestMapping(path = "/application")
+@RequestMapping(path = "/api/v1/simplequotations")
 public class MainController {
 
   @Autowired
